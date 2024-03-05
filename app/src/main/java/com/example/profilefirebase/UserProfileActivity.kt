@@ -56,7 +56,7 @@ class UserProfileActivity : AppCompatActivity() {
         fireBaseStorage = FirebaseStorage.getInstance()
 
         userUploadDataButton.setOnClickListener {
-            getUserData()
+            setUserData()
 //            uploadVideo()
         }
 
@@ -77,7 +77,7 @@ class UserProfileActivity : AppCompatActivity() {
 //        startActivityForResult(intent, 150)
     }
 
-    @SuppressLint("Recycle")
+    @SuppressLint("Recycle", "SuspiciousIndentation")
     @Deprecated("Deprecated in Java")
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         super.onActivityResult(requestCode, resultCode, data)
@@ -108,7 +108,7 @@ class UserProfileActivity : AppCompatActivity() {
 //        return map.getExtensionFromMimeType(ref.getType(videoUri!!))
 //    }
 
-    private fun getUserData() {
+    private fun setUserData() {
         uri?.let { uri ->
             val imageShare = FirebaseStorage.getInstance().reference
                 .child("profileImage")
